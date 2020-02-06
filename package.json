@@ -1,0 +1,35 @@
+{
+  "name": "@ylz/node-cache",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=8.10.0"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "precommit": "npm run build",
+    "prebuild": "npm run remove-dist",
+    "build": "tsc",
+    "remove-dist": "rm -rf ./dist",
+    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "lint:fix": "yarn lint -- --fix",
+    "pretest": "rm -rf ./testDir",
+    "test": "cross-env NODE_ENV=test jest --forceExit --runInBand",
+    "test:c": "npm run test -- --coverage",
+    "test:w": "npm run test -- --watch"
+  },
+  "dependencies": {
+    "@ylz/logger": "git+https://github.com/aytekinyaliz/ylz-logger#semver:^1.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "23.3.12",
+    "@types/winston": "2.3.8",
+    "cross-env": "5.2.0",
+    "jest": "24.8.0",
+    "jest-sonar-reporter": "2.0.0",
+    "ts-jest": "23.0.0",
+    "tslint": "5.10.0",
+    "typescript": "3.5.2"
+  }
+}
