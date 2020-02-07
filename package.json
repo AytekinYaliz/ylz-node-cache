@@ -7,6 +7,7 @@
     "node": ">=8.10.0"
   },
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "precommit": "npm run build",
     "prebuild": "npm run remove-dist",
